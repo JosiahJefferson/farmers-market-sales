@@ -10,7 +10,7 @@ df["date"] = pd.to_datetime(df["date"], errors="coerce")
 
 print("Accuracy Check")
 
-negative_prices = df[df["price"] < 0]
+negative_prices = (df["price"] < 0).sum()
 print(f"Negative Prices: {negative_prices}")
 
 today = pd.Timestamp.today().normalize()
